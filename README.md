@@ -211,3 +211,21 @@ A criação de outras branches são feitas para resolver problemas ou novas func
 Para alternar entre branches, utilize **git checkout nomeDaBranch**.
 
 Para criar uma nova branch, use **git checkout -b nome-da-branch**. Dessa forma é criada uma cópia da main.
+
+Faça as alterações necessárias e depois os commits padrão.
+
+```Shell
+git add --all # Adiciona todas as alterações e novos arquivos
+git commit -m "Adicionada nova funcionalidade" # Histórico de alterações
+git push -u origin create-new-user # Envia as alterações para branch alternativa, preservando a main.
+```
+
+## Pull requests
+
+os pull requests no GitHub são as comparações feitas com base nas alterações entre as branches. Temos então o DE -> PARA, sendo feita análise para mesclar as mudanças e consolidar a aplicação na main.
+
+Aqui é possivel adicionar comentários sobre as alterações e fazer o link com outros pull requestes utilizando a hashtag #. Caso a alteração encerre uma issue, utilize no comentario **Closes #numeroDaIssue. Ex: Closes #1**.
+
+Após análise selecione o Merge pull request para mesclar todas as alterações para main.
+
+Em seguida, delete a branch paralela para melhor organização.
