@@ -186,12 +186,22 @@ Obs: Ainda é possivel rastrear os commits anteriores no GitHub, e as informaç�
 Caso necessário, execute os comandos para limpar todo o histórico:
 
 ```Shell
-git remote remove origin # Remove o repositorio remoto
-git checkout --orphan latest_branch # Altera a branch para uma alternativa
-git add --all # Adiciona os arquivos e alterações ao git
-git commit -am "Edição Inicial" # Mensagem do commit
-git branch -D main # Apaga a branch principal
-git branch -m main # Renomeia a branch alternativa para principal
+git remote remove origin # Remove o repositorio remoto.
+git checkout --orphan latest_branch # Altera a branch para uma alternativa.
+git add --all # Adiciona todos arquivos e alterações ao git.
+git commit -am "Edição Inicial" # Faz o git add e git commit juntos dos arquivos rastreados.
+git branch -D main # Apaga a branch principal.
+git branch -m main # Renomeia a branch alternativa para principal.
+git remote add origin urlDoRepositorio # Adiciona o repositório remoto.
 git push -f origin main # Envia todas as alterações para a branch principal no GitHub.
-git gc --aggressive --prune=all # Apaga arquivos antigos
+git gc --aggressive --prune=all # Apaga arquivos e pastas antigas.
 ```
+
+## Branches
+
+As branches são as ramificações.
+
+**main** -> É a branch principal de produção. Deve ser evitado fazer commits na main.
+O correto é criar uma branch paralela para fazer todas as alterações e só enviar o resultado final para main.
+
+Para renomear uma branch use o comando **git branch -M novoNomeDaBranch**.
