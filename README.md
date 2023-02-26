@@ -205,3 +205,9 @@ As branches são as ramificações.
 O correto é criar uma branch paralela para fazer todas as alterações e só enviar o resultado final para main.
 
 Para renomear uma branch use o comando **git branch -M novoNomeDaBranch**.
+
+A criação de outras branches são feitas para resolver problemas ou novas funcionalidades da aplicação.
+
+Para alternar entre branches, utilize **git checkout nomeDaBranch**.
+
+Para criar uma nova branch, use **git checkout -b nome-da-branch**. Dessa forma é criada uma cópia da main.
