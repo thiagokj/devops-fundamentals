@@ -161,8 +161,6 @@ Obs: o parametro -u é Upstream (subir).
 
 ## Melhorias no envio
 
-Para adicionar todos os arquivos de um projeto ao rastreio do git, utilize **git add --all**.
-
 Crie um arquivo .gitignore para informar quais arquivos não devem ser enviados para o GitHub.
 
 Comando: **dotnet new gitignore**
@@ -171,6 +169,8 @@ O arquivo gerado pelo dotnet é um padrão com as extensões e pastas comuns par
 
 Obs: Após a criação do arquivo, o controle é feito apenas para novos arquivos. Os arquivos já enviados
 permanecem no repositório. A criação do .gitignore deve ser o primeiro ao iniciar o projeto.
+
+Para adicionar todos os arquivos de um projeto ao rastreio do git, utilize **git add --all**.
 
 ## Removendo arquivos do GitHub
 
@@ -186,6 +186,11 @@ Obs: Ainda é possivel rastrear os commits anteriores no GitHub, e as informaç�
 Caso necessário, execute os comandos para limpar todo o histórico:
 
 ```Shell
+git rm -r --cached . # Remove arquivos do controle do git que não devem ser enviados
+git add . # Adiciona todos os arquivos
+git commit -m "Remoção de arquivos conforme .gitignore"
+git push --set-upstream origin main
+
 git remote remove origin # Remove o repositorio remoto.
 git checkout --orphan latest_branch # Altera a branch para uma alternativa.
 git add --all # Adiciona todos arquivos e alterações ao git.
